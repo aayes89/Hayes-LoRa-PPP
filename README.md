@@ -32,11 +32,11 @@ Para que sepas exactamente qué esperar antes de probarlo, aquí una tabla hones
 
 📋 <b>Requisitos</b>
 
-# Hardware
+<b>Hardware</b>
 * Raspberry Pi Pico (o Pico W, pero no usa WiFi aquí).
 * Módulo LoRa SX1278 (e.g., Heltec o Seeed, ~$10 en AliExpress).
 
-# Conexiones (ajusta pines en código):
+<b>Conexiones (ajusta pines en código):</b>
 CS (SS): GPIO 5
 RST: GPIO 6
 DIO0: GPIO 7
@@ -46,7 +46,7 @@ LED debug: GP25
 Antena LoRa (433/915 MHz, ~3-5dBi para mejor alcance).
 Cable USB para Serial (COM en Windows).
 
-# Software
+<b>Software</b>
 
 <b>Arduino IDE (v2.x) configuración:</b>
  - Board: "Raspberry Pi RP2040 Boards" (via Board Manager).
