@@ -152,7 +152,7 @@ MIT License – Usa, modifica, comparte libremente. © 2025 [Slam].
 
 🙏 <b>Agradecimientos</b>
 
-Inspirado en mods Hayes vintage y libs LoRa. Shoutout a Sandeep Mistry por la lib LoRa. ¡Estrellas y forks apreciados para promocionar off-grid hacking!
+Inspirado en mods Hayes vintage, TheOldNet y libs LoRa. Shoutout a Sandeep Mistry por la lib LoRa.
 
 <b> Capturas de pantalla </b>
 
