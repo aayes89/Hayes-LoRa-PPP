@@ -37,11 +37,11 @@ Para que sepas exactamente qué esperar antes de probarlo, aquí una tabla hones
 * Módulo LoRa SX1278 (e.g., Heltec o Seeed, ~$10 en AliExpress).
 
 <b>Conexiones (ajusta pines en código):</b>
-CS (SS): GPIO 5
-RST: GPIO 6
-DIO0: GPIO 7
-SPI: SCK=GP2, MISO=GP4, MOSI=GP3
-LED debug: GP25
+* CS (SS): GPIO 5
+* RST: GPIO 6
+* DIO0: GPIO 7
+* SPI: SCK=GP2, MISO=GP4, MOSI=GP3
+* LED debug: GP25
 
 Antena LoRa (433/915 MHz, ~3-5dBi para mejor alcance).
 Cable USB para Serial (COM en Windows).
@@ -59,32 +59,35 @@ Cable USB para Serial (COM en Windows).
 🛠️ <b>Instalación</b>
 
 1. Clona éste repositorio.
+
 2. Abre en Arduino IDE:
 * Archivo > Abrir > y carga el archivo 'HayesLoRaPPPModem.ino'.
 * Selecciona board: "Raspberry Pi Pico".
 * Puerto: El COM/USB del Pico (mantén BOOTSEL presionado para upload si es necesario).
+  
 3. Configura:
 * Cambia nodeMac[6] a un MAC único (e.g., {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF}).
 * Ajusta LORA_FREQ (433E6 para EU/Asia, 915E6 para US).
 * Pines si tu wiring difiere.
+ 
 4. Compila y sube:
 * Verify > Upload.
 * Abre Serial Monitor (115200 baud): Deberías ver "HAYES-LoRa-PPP Modem Ready" y tu "My Dial ID" (e.g., "AABBCCDDEEFF" como número de 11 dígitos).
+ 
 5. Opcional pero más eficiente:
-  * Skecth > Exportar Binario Compilado (para generar el UF2), será más simple copiar el binario resultanto y copiarlo por BOOTSEL.
-
-
+* Skecth > Exportar Binario Compilado (para generar el UF2), será más simple copiar el binario resultanto y copiarlo por BOOTSEL.
+ 
 ¡Listo! Enciende dos Picos cerca; verás logs de "NEIGHBOR" vía beacons.
 
 🔧 Uso
 1. <b>Pruebas Básicas (AT Commands)</b>
 Usa TeraTERM/SmarTTY/PuTTY (Serial, 115200, 8N1) para simular un terminal modem:
 
-AT → OK
-ATI → Info del modem y Dial ID.
-ATD <ID_remoto> → Marca (SYN); espera "CONNECT 115200" si handshake OK.
-ATA → Contesta si "RING" recibido.
-ATH → Cuelga.
+* AT → OK
+* ATI → Info del modem y Dial ID.
+* ATD <ID_remoto> → Marca (SYN); espera "CONNECT 115200" si handshake OK.
+* ATA → Contesta si "RING" recibido.
+* ATH → Cuelga.
 
 2. <b>Conexión PPP en Windows</b>
 
@@ -98,9 +101,9 @@ ATH → Cuelga.
 Prueba: Abre CMD y ping 192.168.1.2 – ¡llega vía LoRa!
 3. <b>Ejemplo Multi-Nodo</b>
 
-Nodo A (Dial ID: 12345678901): Conecta a PC Windows.
-Nodo B (Dial ID: 98765432109): Corre solo (o con otra PC).
-En A: ATD 98765432109 → PPP up, ping desde Windows a IP de B.
+* Nodo A (Dial ID: 12345678901): Conecta a PC Windows.
+* Nodo B (Dial ID: 98765432109): Corre solo (o con otra PC).
+* En A: ATD 98765432109 → PPP up, ping desde Windows a IP de B.
 
 Consejo: Asegura línea de vista; ajusta SF=12 para más alcance (pero más lento).
 
