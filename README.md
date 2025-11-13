@@ -21,14 +21,36 @@ Desarrollado en Arduino IDE, este proyecto emula un módem clásico de los 90s p
 🚀 <b>Ventajas y Desventajas</b>
 
 Para que sepas exactamente qué esperar antes de probarlo, aquí una tabla honesta:
-
-<table>Ventajas,Desventajas
-"Fácil integración: Funciona out-of-the-box con Windows ""Acceso telefónico"" – ¡como un módem dial-up real!","Single-hop solo: No routing mesh (P2P directo); para redes multi-hop, necesitarás extensiones."
-"Bajo consumo: Ideal para battery-powered (Pico ~10mA en RX, LoRa duty-cycle bajo). Alcance ~1-10km en línea de vista.",Ancho de banda limitado: LoRa es lento (~5-10kbps en SF9); no para streaming/video. Paquetes IP max 256 bytes (sin fragmentación full).
-"Off-grid puro: Sin WiFi/celular; perfecto para emergencias, drones o sensores remotos.",No encriptado: Frames LoRa planos; vulnerable a eavesdropping (agrega AES si necesitas).
-"Open-source & extensible: Código limpio en Arduino; fácil agregar features (e.g., CHAP, auto-answer).",Dependiente de hardware: Requiere SX1278 exacto; frecuencias reguladas por país (ajusta LORA_FREQ).
-"Debug amigable: Logs verbose + S-regs para tuning (e.g., S0 para auto-answer).","PPP básico: Soporta PAP pero no CHAP avanzado; puede fallar en setups estrictos (e.g., Windows Server)."
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Ventajas</strong></th>
+                <th><strong>Desventajas</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Fácil integración</strong>: Funciona out-of-the-box con Windows "Acceso telefónico" – ¡como un módem dial-up real!</td>
+                <td><strong>Single-hop solo</strong>: No routing mesh (P2P directo); para redes multi-hop, necesitarás extensiones.</td>
+            </tr>
+            <tr>
+                <td><strong>Bajo consumo</strong>: Ideal para battery-powered (Pico ~10mA en RX, LoRa duty-cycle bajo). Alcance ~1-10km en línea de vista.</td>
+                <td><strong>Ancho de banda limitado</strong>: LoRa es lento (~5-10kbps en SF9); no para streaming/video. Paquetes IP max 256 bytes (sin fragmentación full).</td>
+            </tr>
+            <tr>
+                <td><strong>Off-grid puro</strong>: Sin WiFi/celular; perfecto para emergencias, drones o sensores remotos.</td>
+                <td><strong>No encriptado</strong>: Frames LoRa planos; vulnerable a eavesdropping (agrega AES si necesitas).</td>
+            </tr>
+            <tr>
+                <td><strong>Open-source & extensible</strong>: Código limpio en Arduino; fácil agregar features (e.g., CHAP, auto-answer).</td>
+                <td><strong>Dependiente de hardware</strong>: Requiere SX1278 exacto; frecuencias reguladas por país (ajusta LORA_FREQ).</td>
+            </tr>
+            <tr>
+                <td><strong>Debug amigable</strong>: Logs verbose + S-regs para tuning (e.g., S0 para auto-answer).</td>
+                <td><strong>PPP básico</strong>: Soporta PAP pero no CHAP avanzado; puede fallar en setups estrictos (e.g., Windows Server).</td>
+            </tr>
+        </tbody>
+    </table>
 
 📋 <b>Requisitos</b>
 
